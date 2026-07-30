@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>DiaFed AI | Doctor Dashboard</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="min-h-screen flex">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside id="sidebar"
+           class="sidebar">
+
+
+        <!-- BRAND -->
+
+        <div class="brand-container">
+
+            <div class="brand-mark">
+                <span>+</span>
+            </div>
+
+            <div class="brand-text">
+
+                <h1>
+                    DiaFed
+                    <span>AI</span>
+                </h1>
+
+                <p>
+                    CLINICAL INTELLIGENCE
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- DOCTOR PROFILE -->
+
+        <div class="doctor-wrapper">
+
+            <div class="doctor-card">
+
+                <div class="doctor-avatar">
+                    DS
+                </div>
+
+                <div class="doctor-info">
+
+                    <p>
+                        Dr. Sharma
+                    </p>
+
+                    <span>
+                        Physician
+                    </span>
+
+                </div>
+
+                <span class="online-dot"></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+
+            <p class="nav-section">
+                WORKSPACE
+            </p>
+
+
+            <a href="#overview"
+               class="sidebar-link active">
+
+                <span class="sidebar-icon">⌂</span>
+
+                <span>Overview</span>
+
+            </a>
+
+
+            <a href="#patients"
+               class="sidebar-link">
+
+                <span class="sidebar-icon">♙</span>
+
+                <span>Patients</span>
+
+            </a>
+
+
+            <a href="#assessment"
+               class="sidebar-link">
+
+                <span class="sidebar-icon">＋</span>
+
+                <span>New Assessment</span>
+
+            </a>
+
+
+            <a href="#predictions"
+               class="sidebar-link">
+
+                <span class="sidebar-icon">◈</span>
+
+                <span>Predictions</span>
+
+            </a>
+
+
+            <p class="nav-section nav-space">
+                AI & ANALYTICS
+            </p>
+
+
+            <a href="#explainability"
+               class="sidebar-link">
+
+                <span class="sidebar-icon">✦</span>
+
+                <span>Explainable AI</span>
+
+            </a>
+
+
+            <a href="#federated"
+               class="sidebar-link">
+
+                <span class="sidebar-icon">◎</span>
+
+                <span>Federated Network</span>
+
+            </a>
+
+
+            <a href="#analytics"
+               class="sidebar-link">
+
+                <span class="sidebar-icon">▥</span>
+
+                <span>Analytics</span>
+
+            </a>
+
+
+            <p class="nav-section nav-space">
+                SYSTEM
+            </p>
+
+
+            <a href="#settings"
+               class="sidebar-link">
+
+                <span class="sidebar-icon">⚙</span>
+
+                <span>Settings</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR FOOTER -->
+
+        <div class="sidebar-footer">
+
+            <span class="system-dot"></span>
+
+            <span>
+                System operational
+            </span>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN APPLICATION
+    ====================================================== -->
+
+    <div class="flex-1 min-w-0">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+
+            <div class="topbar-left">
+
+
+                <!-- MOBILE MENU -->
+
+                <button id="menuButton"
+                        class="mobile-menu-button">
+
+                    ☰
+
+                </button>
+
+
+                <div>
+
+                    <p class="workspace-label">
+                        Clinical Workspace
+                    </p>
+
+                    <h2>
+                        Overview
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <span class="search-icon">
+                        ⌕
+                    </span>
+
+                    <input
+                        type="text"
+                        placeholder="Search patients...">
+
+                    <span class="search-shortcut">
+                        /
+                    </span>
+
+                </div>
+
+
+                <!-- NOTIFICATION -->
+
+                <button class="topbar-button">
+
+                    ♧
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <!-- PROFILE -->
+
+                <button class="profile-button">
+                    DS
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main>
+
+
+            <!-- =================================================
+                 WELCOME
+            ================================================== -->
+
+            <section id="overview"
+                     class="welcome-section">
+
+
+                <div class="welcome-content">
+
+                    <div>
+
+                        <p class="date-text">
+                            Thursday, July 30, 2026
+                        </p>
+
+                        <h1>
+                            Good evening, Dr. Sharma
+                        </h1>
+
+                        <p class="welcome-description">
+                            Here's an overview of your clinical
+                            workspace and AI model activity.
+                        </p>
+
+                    </div>
+
+
+                    <button class="primary-button">
+
+                        <span>＋</span>
+
+                        New Assessment
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 KPI CARDS
+            ================================================== -->
+
+            <section class="stats-grid">
+
+
+                <!-- TOTAL PATIENTS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div>
+
+                            <p class="stat-label">
+                                TOTAL PATIENTS
+                            </p>
+
+                            <p class="stat-value">
+                                128
+                            </p>
+
+                        </div>
+
+                        <div class="stat-icon">
+                            ♙
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-footer">
+
+                        <span class="trend-positive">
+                            +12
+                        </span>
+
+                        <span>
+                            this month
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ASSESSMENTS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div>
+
+                            <p class="stat-label">
+                                ASSESSMENTS
+                            </p>
+
+                            <p class="stat-value">
+                                34
+                            </p>
+
+                        </div>
+
+                        <div class="stat-icon">
+                            ◈
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-footer">
+
+                        <span class="trend-positive">
+                            +8
+                        </span>
+
+                        <span>
+                            today
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- HIGH RISK -->
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div>
+
+                            <p class="stat-label">
+                                HIGH-RISK CASES
+                            </p>
+
+                            <p class="stat-value">
+                                08
+                            </p>
+
+                        </div>
+
+                        <div class="stat-icon warning">
+                            !
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-footer">
+
+                        <span class="trend-warning">
+                            Review required
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- GLOBAL MODEL -->
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div>
+
+                            <p class="stat-label">
+                                GLOBAL MODEL
+                            </p>
+
+                            <p class="stat-value model-value">
+                                Ready
+                            </p>
+
+                        </div>
+
+                        <div class="stat-icon success">
+                            AI
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-footer">
+
+                        <span class="model-online">
+                            ● Online
+                        </span>
+
+                        <span>
+                            FedAvg
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ANALYTICS
+            ================================================== -->
+
+            <section id="analytics"
+                     class="analytics-grid">
+
+
+                <!-- RISK DISTRIBUTION -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Risk Distribution
+                            </h3>
+
+                            <p>
+                                Assessment overview
+                            </p>
+
+                        </div>
+
+
+                        <select class="period-select">
+
+                            <option>
+                                This month
+                            </option>
+
+                            <option>
+                                This week
+                            </option>
+
+                            <option>
+                                Today
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="chart-container">
+
+
+                        <div class="chart-y-axis">
+
+                            <span>100</span>
+                            <span>75</span>
+                            <span>50</span>
+                            <span>25</span>
+                            <span>0</span>
+
+                        </div>
+
+
+                        <div class="chart-area">
+
+
+                            <div class="chart-grid"></div>
+
+
+                            <svg
+                                viewBox="0 0 700 220"
+                                preserveAspectRatio="none"
+                                class="risk-chart">
+
+                                <polyline
+                                    points="0,170
+                                            70,155
+                                            140,160
+                                            210,125
+                                            280,140
+                                            350,100
+                                            420,115
+                                            490,80
+                                            560,95
+                                            630,60
+                                            700,70"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="3"
+                                    class="chart-line"/>
+
+                            </svg>
+
+
+                            <div class="chart-labels">
+
+                                <span>Week 1</span>
+                                <span>Week 2</span>
+                                <span>Week 3</span>
+                                <span>Week 4</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chart-legend">
+
+                        <span>
+
+                            <i class="legend-dot"></i>
+
+                            Assessments
+
+                        </span>
+
+                        <span>
+                            Demo visualization
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MODEL STATUS -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                AI Model Status
+                            </h3>
+
+                            <p>
+                                Federated global model
+                            </p>
+
+                        </div>
+
+
+                        <span class="status-badge">
+                            ● Ready
+                        </span>
+
+                    </div>
+
+
+                    <div class="model-overview">
+
+                        <div class="large-ai-icon">
+                            AI
+                        </div>
+
+
+                        <h3>
+                            Diabetes Prediction Model
+                        </h3>
+
+
+                        <p>
+                            Global model is available
+                            for clinical assessment.
+                        </p>
+
+                    </div>
+
+
+                    <div class="model-details">
+
+
+                        <div>
+
+                            <span>
+                                Aggregation
+                            </span>
+
+                            <strong>
+                                FedAvg
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Clients
+                            </span>
+
+                            <strong>
+                                03 / 03
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Explainability
+                            </span>
+
+                            <strong>
+                                SHAP
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Status
+                            </span>
+
+                            <strong class="operational">
+                                Operational
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <button class="secondary-button full-width">
+
+                        View Federated Network →
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RECENT ASSESSMENTS
+            ================================================== -->
+
+            <section id="patients"
+                     class="dashboard-card section-spacing">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Recent Assessments
+                        </h3>
+
+                        <p>
+                            Patient assessment activity
+                        </p>
+
+                    </div>
+
+
+                    <button class="view-button">
+                        View all →
+                    </button>
+
+                </div>
+
+
+                <div class="patient-table-wrapper">
+
+                    <table class="patient-table">
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Patient ID
+                                </th>
+
+                                <th>
+                                    Age
+                                </th>
+
+                                <th>
+                                    Assessment
+                                </th>
+
+                                <th>
+                                    Risk
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>
+                                    <span class="patient-id">
+                                        P-1024
+                                    </span>
+                                </td>
+
+                                <td>
+                                    45
+                                </td>
+
+                                <td>
+                                    Diabetes Risk
+                                </td>
+
+                                <td>
+                                    <span class="risk-high">
+                                        High
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="review-status">
+                                        Review
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Today
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <span class="patient-id">
+                                        P-1023
+                                    </span>
+                                </td>
+
+                                <td>
+                                    52
+                                </td>
+
+                                <td>
+                                    Diabetes Risk
+                                </td>
+
+                                <td>
+                                    <span class="risk-low">
+                                        Low
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="clear-status">
+                                        Cleared
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Today
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <span class="patient-id">
+                                        P-1022
+                                    </span>
+                                </td>
+
+                                <td>
+                                    39
+                                </td>
+
+                                <td>
+                                    Diabetes Risk
+                                </td>
+
+                                <td>
+                                    <span class="risk-medium">
+                                        Moderate
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="review-status">
+                                        Review
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Yesterday
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <p class="demo-note">
+
+                    Demo interface data — will be replaced by
+                    connected patient records.
+
+                </p>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FEDERATED NETWORK
+            ================================================== -->
+
+            <section id="federated"
+                     class="network-grid section-spacing">
+
+
+                <!-- NETWORK -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Federated Network
+                            </h3>
+
+                            <p>
+                                Connected healthcare clients
+                            </p>
+
+                        </div>
+
+
+                        <span class="status-badge">
+                            ● 3 Online
+                        </span>
+
+                    </div>
+
+
+                    <div class="federated-network">
+
+
+                        <div class="global-node">
+
+                            <div class="global-circle">
+                                AI
+                            </div>
+
+                            <strong>
+                                Global Server
+                            </strong>
+
+                            <span>
+                                FedAvg aggregation
+                            </span>
+
+                        </div>
+
+
+                        <div class="network-connector"></div>
+
+
+                        <div class="client-grid">
+
+
+                            <div class="client">
+
+                                <div class="client-icon">
+                                    A
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Hospital A
+                                    </strong>
+
+                                    <span>
+                                        ● Connected
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="client">
+
+                                <div class="client-icon">
+                                    B
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Hospital B
+                                    </strong>
+
+                                    <span>
+                                        ● Connected
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="client">
+
+                                <div class="client-icon">
+                                    C
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Hospital C
+                                    </strong>
+
+                                    <span>
+                                        ● Connected
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EXPLAINABLE AI -->
+
+                <div id="explainability"
+                     class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Explainable AI
+                            </h3>
+
+                            <p>
+                                SHAP feature contribution
+                            </p>
+
+                        </div>
+
+
+                        <span class="xai-badge">
+                            SHAP
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature-list">
+
+
+                        <div class="feature-impact">
+
+                            <div>
+
+                                <span>
+                                    Glucose
+                                </span>
+
+                                <strong>
+                                    High impact
+                                </strong>
+
+                            </div>
+
+                            <div class="impact-track">
+
+                                <div style="width:85%"></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="feature-impact">
+
+                            <div>
+
+                                <span>
+                                    BMI
+                                </span>
+
+                                <strong>
+                                    Moderate
+                                </strong>
+
+                            </div>
+
+                            <div class="impact-track">
+
+                                <div style="width:64%"></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="feature-impact">
+
+                            <div>
+
+                                <span>
+                                    Age
+                                </span>
+
+                                <strong>
+                                    Moderate
+                                </strong>
+
+                            </div>
+
+                            <div class="impact-track">
+
+                                <div style="width:43%"></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="feature-impact">
+
+                            <div>
+
+                                <span>
+                                    Insulin
+                                </span>
+
+                                <strong>
+                                    Lower
+                                </strong>
+
+                            </div>
+
+                            <div class="impact-track">
+
+                                <div style="width:27%"></div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <p class="demo-note">
+
+                        Example visualization — actual SHAP values
+                        will be generated by the model.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PREDICTIONS
+            ================================================== -->
+
+            <section id="predictions"
+                     class="dashboard-card section-spacing">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            AI Predictions
+                        </h3>
+
+                        <p>
+                            Explainable diabetes risk predictions
+                        </p>
+
+                    </div>
+
+                    <span class="xai-badge">
+                        AI + SHAP
+                    </span>
+
+                </div>
+
+
+                <div class="prediction-info">
+
+                    <div>
+                        <strong>
+                            Global model
+                        </strong>
+
+                        <span>
+                            FedAvg
+                        </span>
+                    </div>
+
+
+                    <div>
+                        <strong>
+                            Explainability
+                        </strong>
+
+                        <span>
+                            SHAP
+                        </span>
+                    </div>
+
+
+                    <div>
+                        <strong>
+                            Clients
+                        </strong>
+
+                        <span>
+                            03 / 03
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ASSESSMENT
+            ================================================== -->
+
+            <section id="assessment"
+                     class="assessment-banner section-spacing">
+
+
+                <div>
+
+                    <p class="assessment-label">
+                        CLINICAL ASSESSMENT
+                    </p>
+
+                    <h2>
+                        Start a new diabetes risk assessment
+                    </h2>
+
+                    <p>
+                        Enter clinical parameters and generate an
+                        explainable AI prediction.
+                    </p>
+
+                </div>
+
+
+                <button class="primary-button">
+                    New Assessment →
+                </button>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SETTINGS PLACEHOLDER
+            ================================================== -->
+
+            <section id="settings"
+                     class="settings-section">
+
+                <span>
+                    Settings
+                </span>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
