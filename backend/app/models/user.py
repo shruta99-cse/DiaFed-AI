@@ -8,21 +8,21 @@ class User(Base):
 
     id = Column(Integer, primary_key=True, index=True)
 
-    name = Column(String, nullable=False)
+    name = Column(String(100), nullable=False)
 
     email = Column(
-        String,
+        String(100),
         unique=True,
         index=True,
         nullable=False
     )
 
     hashed_password = Column(
-        String,
+        String(255),
         nullable=False
     )
 
     role = Column(
-        String,
+        String(20),
         default="doctor"
     )

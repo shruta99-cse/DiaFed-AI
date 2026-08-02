@@ -1,38 +1,53 @@
 import { ShieldCheck } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LoginInput from "./LoginInput";
-import { loginUser } from "../../services/api";
 
-const LoginForm = () => {
+import RegisterInput from "./RegisterInput";
+import { registerUser } from "../../services/api";
+
+const RegisterForm = () => {
   const navigate = useNavigate();
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleLogin = async (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
 
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
     try {
-      const data = await loginUser({
+      await registerUser({
+        name,
         email,
         password,
       });
 
-      localStorage.setItem("token", data.access_token);
+      alert("Registration Successful! Please Login.");
 
-      alert("Login Successful!");
-
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       alert(error.message);
     }
   };
 
   return (
-    <form className="mt-10 space-y-7" onSubmit={handleLogin}>
+    <form className="mt-10 space-y-6" onSubmit={handleRegister}>
 
-      <LoginInput
+      <RegisterInput
+        label="Full Name"
+        type="text"
+        placeholder="Dr. John Doe"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+
+      <RegisterInput
         label="Email Address"
         type="email"
         placeholder="doctor@example.com"
@@ -40,68 +55,63 @@ const LoginForm = () => {
         onChange={(e) => setEmail(e.target.value)}
       />
 
-      <LoginInput
+      <RegisterInput
         label="Password"
         type="password"
-        placeholder="Enter your password"
+        placeholder="Create password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <div className="flex items-center justify-between">
+      <RegisterInput
+        label="Confirm Password"
+        type="password"
+        placeholder="Confirm password"
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
+      />
 
-        <label className="flex items-center gap-3 cursor-pointer">
-          <input
-            type="checkbox"
-            className="h-4 w-4 rounded border-slate-300 text-blue-600"
-          />
-
-          <span className="text-sm text-slate-600">
-            Remember me
-          </span>
-        </label>
-
-        <button
-          type="button"
-          className="text-sm font-semibold text-blue-600"
-        >
-          Forgot Password?
-        </button>
-
-      </div>
-
-      {/* Login Button */}
       <button
         type="submit"
-        className="w-full h-12 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white font-semibold"
+        className="
+        w-full
+        h-12
+        rounded-xl
+        bg-gradient-to-r
+        from-blue-600
+        via-indigo-600
+        to-blue-700
+        text-white
+        font-semibold
+        shadow-lg
+        hover:shadow-xl
+        transition
+        "
       >
-        Sign In
+        Create Account
       </button>
 
-      {/* Register Link */}
       <p className="text-center text-sm text-slate-600">
-        Don't have an account?{" "}
+        Already have an account?{" "}
         <button
           type="button"
-          onClick={() => navigate("/register")}
+          onClick={() => navigate("/")}
           className="font-semibold text-blue-600 hover:text-indigo-700"
         >
-          Create Account
+          Sign In
         </button>
       </p>
 
-      {/* Divider */}
       <div className="flex items-center gap-4">
         <div className="flex-1 h-px bg-slate-200"></div>
 
         <span className="text-xs uppercase tracking-[3px] text-slate-400">
-          Secure Login
+          Secure Registration
         </span>
 
         <div className="flex-1 h-px bg-slate-200"></div>
       </div>
 
-      {/* Security Notice */}
       <div className="flex items-start gap-3 rounded-xl border border-blue-100 bg-blue-50 p-4">
 
         <ShieldCheck
@@ -110,8 +120,7 @@ const LoginForm = () => {
         />
 
         <p className="text-sm leading-6 text-slate-600">
-          Your login is protected with enterprise-grade encryption.
-          Access is restricted to authorized healthcare professionals.
+          Your account information is securely encrypted and stored.
         </p>
 
       </div>
@@ -120,4 +129,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default RegisterForm;
