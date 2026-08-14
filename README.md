@@ -158,8 +158,8 @@ Compared on **Accuracy, Precision, Recall, F1 Score, and ROC-AUC**.
 | Icons | Lucide React |
 | Charts | Recharts |
 | Routing | React Router |
-| Backend | _(e.g. FastAPI / Flask / Node — update to match)_ |
-| ML | _(e.g. scikit-learn / PyTorch — update to match)_ |
+| Backend |  FastAPI  |
+| ML |  scikit-learn  |
 | Deployment | GitHub Pages |
 
 </details>
