@@ -1,11 +1,2 @@
-@import "tailwindcss";
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  margin:0;
-  font-family:Inter,system-ui,sans-serif;
-  background:#F8FAFC;
-}
+/* Global styles are managed in src/styles/global.css which is imported in main.jsx */
+/* This file is intentionally minimal — do not duplicate @import "tailwindcss" here */
