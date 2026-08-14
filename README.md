@@ -7,8 +7,8 @@
 *A privacy-preserving AI platform where multiple hospitals collaboratively train diabetes prediction models — without ever sharing raw patient data.*
 
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge)](https://shruta99-cse.github.io/DiaFed-AI/)
-[![Made with React](https://img.shields.io/badge/frontend-React-61DAFB?style=for-the-badge&logo=react&logoColor=white)](#)
-[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](#-license)
+[![Made with React](https://img.shields.io/badge/frontend-React-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
+[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](https://github.com/shruta99-cse/DiaFed-AI/blob/main/LICENSE)
 [![Status](https://img.shields.io/badge/status-research%20prototype-orange?style=for-the-badge)](#-disclaimer)
 
 <a href="https://shruta99-cse.github.io/DiaFed-AI/"><strong>🔗 View Live Demo</strong></a>
