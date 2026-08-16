@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-const BASE_URL = "http://127.0.0.1:8000";
-
+const BASE_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 /**
  * useAuth — reads the JWT from localStorage, fetches /auth/me to get the
  * current user object, and exposes { user, loading, logout }.

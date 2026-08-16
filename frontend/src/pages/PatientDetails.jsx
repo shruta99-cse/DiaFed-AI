@@ -17,8 +17,7 @@ import {
 } from "lucide-react";
 import PageHeader from "../components/common/PageHeader";
 
-const BASE_URL = "http://127.0.0.1:8000";
-
+const BASE_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 const riskStyles = {
   High: {
     badge: "border-red-200 bg-red-50 text-red-700",
