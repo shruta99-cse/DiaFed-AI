@@ -104,18 +104,15 @@ class PredictionInput(BaseModel):
 
 class FeatureImportance(BaseModel):
     feature: str
+
     value: Optional[float] = None
+
     shap_value: Optional[float] = None
 
-    # Example:
-    # "+1.0385"
     val: str = ""
 
-    # Example:
-    # "increases risk"
     impact: str
 
-    # high / low / neutral
     direction: str = "neutral"
 
 
@@ -138,14 +135,13 @@ class PredictionOutput(BaseModel):
     probability: float
     confidence: float
 
-    # Explainable AI result
     shap_explanation: List[FeatureImportance]
 
     created_at: datetime
 
 
 # =========================================================
-# DASHBOARD SUMMARY
+# DASHBOARD RISK DISTRIBUTION
 # =========================================================
 
 class RiskDistributionItem(BaseModel):
@@ -155,10 +151,19 @@ class RiskDistributionItem(BaseModel):
     color: str
 
 
+# =========================================================
+# DASHBOARD RISK TREND
+# =========================================================
+
 class RiskTrendItem(BaseModel):
-    day: str
+    label: str
     risk: int
-    avg: int
+    avg: float
+
+
+class RiskTrend(BaseModel):
+    daily: List[RiskTrendItem]
+    weekly: List[RiskTrendItem]
 
 
 # =========================================================
@@ -179,24 +184,39 @@ class HospitalNode(BaseModel):
 # =========================================================
 
 class DashboardSummary(BaseModel):
+
+    # -----------------------------------------------------
+    # Doctor-specific
+    # -----------------------------------------------------
+
     total_patients: int
 
     predictions_today: int
 
     high_risk_patients: int
 
-    model_accuracy: str
-
-    active_hospitals: int
-
     risk_distribution: List[RiskDistributionItem]
 
-    risk_trend: List[RiskTrendItem]
+    risk_trend: RiskTrend
 
     recent_patients: List[PatientResponse]
 
     activity: List[Any]
 
+
+    # -----------------------------------------------------
+    # Global federated model
+    # -----------------------------------------------------
+
+    model_accuracy: str
+
+    active_hospitals: int
+
     federated_nodes: List[HospitalNode]
+
+
+    # -----------------------------------------------------
+    # Timestamp
+    # -----------------------------------------------------
 
     last_updated: str
