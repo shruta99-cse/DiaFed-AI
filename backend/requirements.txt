@@ -30,3 +30,4 @@ pandas>=2.2
 scikit-learn>=1.5
 joblib>=1.4
 shap>=0.46
+imbalanced-learn>=0.12
